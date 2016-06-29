@@ -1,9 +1,6 @@
 ###
-# swagger-ui-builder - https://github.com/swagger-api/swagger-ui/
-# Container for building the swagger-ui static site
-#
-# Build: docker build -t swagger-ui-builder .
-# Run:   docker run -v $PWD/dist:/build/dist swagger-ui-builder
+# Build: docker build -t hireright-chatter .
+# Run:   docker run -v $PWD/dist:/build/dist hireright-chatter . 
 #
 ###
 

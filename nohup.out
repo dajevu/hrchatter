@@ -1,0 +1,210 @@
+[20:38:56] Using gulpfile /build/gulpfile.js
+[20:38:56] Starting 'connect'...
+[20:38:56] Finished 'connect' after 24 ms
+[20:38:56] Starting 'serve'...
+[20:38:56] Finished 'serve' after 19 μs
+[20:38:56] Server started http://localhost:8080
+[20:38:56] LiveReload started on port 35729
+[21:42:34] Using gulpfile /build/gulpfile.js
+[21:42:34] Starting 'connect'...
+[21:42:34] Finished 'connect' after 29 ms
+[21:42:34] Starting 'serve'...
+[21:42:34] Finished 'serve' after 185 μs
+[21:42:34] Server started http://localhost:8080
+[21:42:34] LiveReload started on port 35729
+[21:59:37] Using gulpfile /build/gulpfile.js
+[21:59:37] Starting 'connect'...
+[21:59:37] Finished 'connect' after 24 ms
+[21:59:37] Starting 'serve'...
+[21:59:37] Finished 'serve' after 18 μs
+[21:59:37] Server started http://localhost:8080
+[21:59:37] LiveReload started on port 35729
+[02:03:41] Using gulpfile /build/gulpfile.js
+[02:03:41] Starting 'connect'...
+[02:03:41] Finished 'connect' after 15 ms
+[02:03:41] Starting 'serve'...
+[02:03:41] Finished 'serve' after 15 μs
+[02:03:41] Server started http://localhost:8080
+[02:03:41] LiveReload started on port 35729
+[02:11:20] Using gulpfile /build/gulpfile.js
+[02:11:20] Starting 'connect'...
+[02:11:20] Finished 'connect' after 22 ms
+[02:11:20] Starting 'serve'...
+[02:11:20] Finished 'serve' after 15 μs
+[02:11:20] Server started http://localhost:8080
+[02:11:20] LiveReload started on port 35729
+[02:18:11] Using gulpfile /build/gulpfile.js
+[02:18:11] Starting 'connect'...
+[02:18:11] Finished 'connect' after 14 ms
+[02:18:11] Starting 'serve'...
+[02:18:11] Finished 'serve' after 16 μs
+[02:18:11] Server started http://localhost:8080
+[02:18:11] LiveReload started on port 35729
+[02:25:20] Using gulpfile /build/gulpfile.js
+[02:25:20] Starting 'connect'...
+[02:25:20] Finished 'connect' after 22 ms
+[02:25:20] Starting 'serve'...
+[02:25:20] Finished 'serve' after 18 μs
+[02:25:20] Server started http://localhost:8080
+[02:25:20] LiveReload started on port 35729
+[02:36:44] Using gulpfile /build/gulpfile.js
+[02:36:44] Starting 'connect'...
+[02:36:44] Finished 'connect' after 20 ms
+[02:36:44] Starting 'serve'...
+[02:36:44] Finished 'serve' after 26 μs
+[02:36:44] Server started http://localhost:8080
+[02:36:44] LiveReload started on port 35729
+[21:12:28] Using gulpfile /build/gulpfile.js
+[21:12:28] Starting 'connect'...
+[21:12:28] Finished 'connect' after 178 ms
+[21:12:28] Starting 'serve'...
+[21:12:29] Finished 'serve' after 96 ms
+[21:12:29] Server started http://localhost:8080
+[21:12:29] LiveReload started on port 35729
+[21:29:21] Using gulpfile /build/gulpfile.js
+[21:29:21] Starting 'connect'...
+[21:29:21] Finished 'connect' after 22 ms
+[21:29:21] Starting 'serve'...
+[21:29:21] Finished 'serve' after 15 μs
+[21:29:21] Server started http://localhost:8080
+[21:29:21] LiveReload started on port 35729
+[21:39:56] Using gulpfile /build/gulpfile.js
+[21:39:56] Starting 'connect'...
+[21:39:56] Finished 'connect' after 14 ms
+[21:39:56] Starting 'serve'...
+[21:39:56] Finished 'serve' after 15 μs
+[21:39:56] Server started http://localhost:8080
+[21:39:56] LiveReload started on port 35729
+[21:48:05] Using gulpfile /build/gulpfile.js
+[21:48:05] Starting 'connect'...
+[21:48:05] Finished 'connect' after 22 ms
+[21:48:05] Starting 'serve'...
+[21:48:05] Finished 'serve' after 59 μs
+[21:48:05] Server started http://localhost:8080
+[21:48:05] LiveReload started on port 35729
+[22:01:05] Using gulpfile /build/gulpfile.js
+[22:01:05] Starting 'connect'...
+[22:01:05] Finished 'connect' after 22 ms
+[22:01:05] Starting 'serve'...
+[22:01:05] Finished 'serve' after 15 μs
+[22:01:05] Server started http://localhost:8080
+[22:01:05] LiveReload started on port 35729
+[20:00:06] Using gulpfile /build/gulpfile.js
+[20:00:06] Starting 'connect'...
+[20:00:06] Finished 'connect' after 27 ms
+[20:00:06] Starting 'serve'...
+[20:00:06] Finished 'serve' after 49 μs
+[20:00:06] Server started http://localhost:8080
+[20:00:06] LiveReload started on port 35729
+[20:32:07] Using gulpfile /build/gulpfile.js
+[20:32:07] Starting 'connect'...
+[20:32:07] Finished 'connect' after 21 ms
+[20:32:07] Starting 'serve'...
+[20:32:07] Finished 'serve' after 16 μs
+[20:32:07] Server started http://localhost:8080
+[20:32:07] LiveReload started on port 35729
+Error: Requested Range Not Satisfiable
+    at SendStream.error (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:170:16)
+    at SendStream.send (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:441:19)
+    at /build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:381:10
+    at Object.oncomplete (fs.js:107:15)
+Killed
+[14:55:15] Using gulpfile /build/gulpfile.js
+[14:55:15] Starting 'connect'...
+[14:55:15] Finished 'connect' after 22 ms
+[14:55:15] Starting 'serve'...
+[14:55:15] Finished 'serve' after 14 μs
+[14:55:15] Server started http://localhost:8080
+[14:55:15] LiveReload started on port 35729
+[15:16:31] Using gulpfile /build/gulpfile.js
+[15:16:31] Starting 'connect'...
+[15:16:31] Finished 'connect' after 22 ms
+[15:16:31] Starting 'serve'...
+[15:16:31] Finished 'serve' after 15 μs
+[15:16:31] Server started http://localhost:8080
+[15:16:31] LiveReload started on port 35729
+Error: Requested Range Not Satisfiable
+    at SendStream.error (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:170:16)
+    at SendStream.send (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:441:19)
+    at /build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:381:10
+    at Object.oncomplete (fs.js:107:15)
+Error: Requested Range Not Satisfiable
+    at SendStream.error (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:170:16)
+    at SendStream.send (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:441:19)
+    at /build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:381:10
+    at Object.oncomplete (fs.js:107:15)
+Error: Requested Range Not Satisfiable
+    at SendStream.error (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:170:16)
+    at SendStream.send (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:441:19)
+    at /build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:381:10
+    at Object.oncomplete (fs.js:107:15)
+Error: Requested Range Not Satisfiable
+    at SendStream.error (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:170:16)
+    at SendStream.send (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:441:19)
+    at /build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:381:10
+    at Object.oncomplete (fs.js:107:15)
+Error: Requested Range Not Satisfiable
+    at SendStream.error (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:170:16)
+    at SendStream.send (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:441:19)
+    at /build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:381:10
+    at Object.oncomplete (fs.js:107:15)
+Error: Requested Range Not Satisfiable
+    at SendStream.error (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:170:16)
+    at SendStream.send (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:441:19)
+    at /build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:381:10
+    at Object.oncomplete (fs.js:107:15)
+Error: Requested Range Not Satisfiable
+    at SendStream.error (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:170:16)
+    at SendStream.send (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:441:19)
+    at /build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:381:10
+    at Object.oncomplete (fs.js:107:15)
+Error: Requested Range Not Satisfiable
+    at SendStream.error (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:170:16)
+    at SendStream.send (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:441:19)
+    at /build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:381:10
+    at Object.oncomplete (fs.js:107:15)
+Error: Forbidden
+    at SendStream.error (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:170:16)
+    at SendStream.pipe (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:365:52)
+    at Object.staticMiddleware [as handle] (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/index.js:93:8)
+    at next (/build/node_modules/gulp-connect/node_modules/connect/lib/proto.js:194:15)
+    at Object.livereload [as handle] (/build/node_modules/gulp-connect/node_modules/connect-livereload/index.js:94:14)
+    at next (/build/node_modules/gulp-connect/node_modules/connect/lib/proto.js:194:15)
+    at Function.app.handle (/build/node_modules/gulp-connect/node_modules/connect/lib/proto.js:202:3)
+    at Server.app (/build/node_modules/gulp-connect/node_modules/connect/lib/connect.js:65:37)
+    at Server.EventEmitter.emit (events.js:98:17)
+    at HTTPParser.parser.onIncoming (http.js:2108:12)
+Error: Requested Range Not Satisfiable
+    at SendStream.error (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:170:16)
+    at SendStream.send (/build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:441:19)
+    at /build/node_modules/gulp-connect/node_modules/connect/node_modules/serve-static/node_modules/send/lib/send.js:381:10
+    at Object.oncomplete (fs.js:107:15)
+time="2016-05-16T16:54:54Z" level="fatal" msg="Error response from daemon: engine is shutdown" 
+[19:48:04] Using gulpfile /build/gulpfile.js
+[19:48:04] Starting 'connect'...
+[19:48:04] Finished 'connect' after 23 ms
+[19:48:04] Starting 'serve'...
+[19:48:04] Finished 'serve' after 19 μs
+[19:48:04] Server started http://localhost:8080
+[19:48:04] LiveReload started on port 35729
+[17:25:14] Using gulpfile /build/gulpfile.js
+[17:25:14] Starting 'connect'...
+[17:25:14] Finished 'connect' after 50 ms
+[17:25:14] Starting 'serve'...
+[17:25:14] Finished 'serve' after 15 μs
+[17:25:14] Server started http://localhost:8080
+[17:25:14] LiveReload started on port 35729
+[17:30:18] Using gulpfile /build/gulpfile.js
+[17:30:18] Starting 'connect'...
+[17:30:18] Finished 'connect' after 50 ms
+[17:30:18] Starting 'serve'...
+[17:30:18] Finished 'serve' after 15 μs
+[17:30:18] Server started http://localhost:8080
+[17:30:18] LiveReload started on port 35729
+[17:34:34] Using gulpfile /build/gulpfile.js
+[17:34:34] Starting 'connect'...
+[17:34:34] Finished 'connect' after 51 ms
+[17:34:34] Starting 'serve'...
+[17:34:34] Finished 'serve' after 64 μs
+[17:34:34] Server started http://localhost:8080
+[17:34:34] LiveReload started on port 35729

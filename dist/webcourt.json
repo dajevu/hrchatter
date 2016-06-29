@@ -1,0 +1,492 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Vendor Interface for HireRight's Webcourt",
+        "version": "1.0.0",
+        "title": "HireRight Webcourt API",
+        "termsOfService": "http://helloreverb.com/terms/",
+        "contact": {
+            "url": "http://www.hireright.com",
+            "name": "HireRight",
+            "email": "jdavis@hireright.com"
+        }
+    },
+    "host": "www.hireright.com",
+    "basePath": "/1.0",
+    "schemes": ["http"],
+    "tags": [
+        {
+            "name": "oauth",
+            "description": "Fetch access code using Basic Authentication credentials"
+        },
+        {
+            "name": "requests",
+            "description": "Fetch requests and submit findings"
+        },
+        {
+            "name": "cases",
+            "description": "Individual case processing (optional)"
+        },
+        {
+            "name": "counts",
+            "description": "Individual count processing (optional)"
+        }
+    ],
+    "paths": {
+        "/oauth/token": {"get": {
+            "tags": ["oauth"],
+            "description": "Fetch access token",
+            "operationId": "oauth",
+            "produces": ["application/json"],
+            "parameters": [
+                {
+                    "in": "grant_type",
+                    "name": "grant type",
+                    "default": "password",
+                    "description": "Determine which grant type to use to acquire access token",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "in": "username",
+                    "name": "username",
+                    "description": "Username provided by HireRight",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "in": "password",
+                    "name": "password",
+                    "description": "Password provided by HireRight",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "successful operation",
+                    "schema": {"$ref": "#/definitions/OAuth"}
+                },
+                "400": {"description": "Invalid request"},
+                "401": {"description": "Not authorized"}
+            }
+        }},
+        "/service/requests": {"get": {
+            "tags": ["requests"],
+            "description": "Find all open requests",
+            "operationId": "getRequests",
+            "produces": ["application/json"],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "state",
+                    "default": "assigned",
+                    "description": "Filters by state ('assigned', 'in-progress')",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "in": "header",
+                    "name": "Authorization",
+                    "description": "HTTP Header - Oauth2 Access Token",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "successful operation",
+                    "schema": {
+                        "type": "array",
+                        "items": {"$ref": "#/definitions/Request"}
+                    }
+                },
+                "400": {"description": "Invalid request"},
+                "500": {"description": "Server error"}
+            }
+        }},
+        "/service/requests/{requestId}": {
+            "get": {
+                "tags": ["requests"],
+                "description": "Return a single request",
+                "operationId": "getRequest",
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {"$ref": "#/definitions/SingleRequest"}
+                    },
+                    "400": {"description": "Invalid request"},
+                    "404": {"description": "Not found"},
+                    "500": {"description": "Server error"}
+                }
+            },
+            "post": {
+                "tags": ["requests"],
+                "description": "Submit Results",
+                "operationId": "postRequests",
+                "produces": ["application/json"],
+                "consumes": ["application/json"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "request",
+                    "description": "Send results to be processed",
+                    "required": true,
+                    "schema": {"$ref": "#/definitions/RequestResults"}
+                }],
+                "responses": {
+                    "200": {"description": "successful operation"},
+                    "400": {"description": "Invalid request"},
+                    "500": {"description": "Server error"}
+                }
+            }
+        },
+        "/service/requests/{requestId}/cases": {
+            "put": {
+                "tags": ["cases"],
+                "description": "Submit Individual Case. You can submit a case without a corresponding count if you wish to add the count later.",
+                "operationId": "postCaseRequests",
+                "produces": ["application/json"],
+                "consumes": ["application/json"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "request",
+                    "description": "Submit ",
+                    "required": true,
+                    "schema": {"$ref": "#/definitions/cases"}
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {"$ref": "#/definitions/id"}
+                    },
+                    "400": {"description": "Invalid request"},
+                    "500": {"description": "Server error"}
+                }
+            },
+            "get": {
+                "tags": ["cases"],
+                "description": "Submit Individual Case",
+                "operationId": "getCaseRequests",
+                "produces": ["application/json"],
+                "consumes": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {"$ref": "#/definitions/caseids"}
+                    },
+                    "400": {"description": "Invalid request"},
+                    "500": {"description": "Server error"}
+                }
+            }
+        },
+        "/service/requests/{requestId}/cases/{caseid}": {
+            "get": {
+                "tags": ["cases"],
+                "description": "Get specific case id",
+                "operationId": "getCaseId",
+                "produces": ["application/json"],
+                "consumes": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {"$ref": "#/definitions/caseid"}
+                    },
+                    "400": {"description": "Invalid request"},
+                    "500": {"description": "Server error"}
+                }
+            },
+            "post": {
+                "tags": ["cases"],
+                "description": "Update Individual Case",
+                "operationId": "postCaseRequests",
+                "produces": ["application/json"],
+                "consumes": ["application/json"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "request",
+                    "description": "Submit ",
+                    "required": true,
+                    "schema": {"$ref": "#/definitions/cases"}
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {"$ref": "#/definitions/id"}
+                    },
+                    "400": {"description": "Invalid request"},
+                    "500": {"description": "Server error"}
+                }
+            },
+            "delete": {
+                "tags": ["cases"],
+                "description": "Delete individual case",
+                "operationId": "deleteCase",
+                "produces": ["application/json"],
+                "consumes": ["application/json"],
+                "responses": {
+                    "200": {"description": "successful operation"},
+                    "400": {"description": "Invalid request"},
+                    "500": {"description": "Server error"}
+                }
+            }
+        },
+        "/service/requests/{requestId}/cases/{caseid}/counts": {
+            "put": {
+                "tags": ["counts"],
+                "description": "Submit Individual Case. You can submit a case without a corresponding count if you wish to add the count later.",
+                "operationId": "postCaseRequests",
+                "produces": ["application/json"],
+                "consumes": ["application/json"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "request",
+                    "description": "Submit ",
+                    "required": true,
+                    "schema": {"$ref": "#/definitions/counts"}
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {"$ref": "#/definitions/id"}
+                    },
+                    "400": {"description": "Invalid request"},
+                    "500": {"description": "Server error"}
+                }
+            },
+            "get": {
+                "tags": ["counts"],
+                "description": "Get a list of counts using request and case Ids.",
+                "operationId": "getCounts",
+                "produces": ["application/json"],
+                "consumes": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {"$ref": "#/definitions/id"}
+                    },
+                    "400": {"description": "Invalid request"},
+                    "500": {"description": "Server error"}
+                }
+            }
+        },
+        "/service/requests/{requestId}/cases/{caseid}/counts/{countid}": {
+            "get": {
+                "tags": ["counts"],
+                "description": "Retrieve a specific count using request, case and count Ids",
+                "operationId": "postCaseRequests",
+                "produces": ["application/json"],
+                "consumes": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {"$ref": "#/definitions/count"}
+                    },
+                    "400": {"description": "Invalid request"},
+                    "500": {"description": "Server error"}
+                }
+            },
+            "post": {
+                "tags": ["counts"],
+                "description": "Update a specific count using request, case and count Ids",
+                "operationId": "postCaseRequests",
+                "produces": ["application/json"],
+                "consumes": ["application/json"],
+                "parameters": [{
+                    "in": "body",
+                    "name": "request",
+                    "description": "Submit ",
+                    "required": true,
+                    "schema": {"$ref": "#/definitions/count"}
+                }],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {"$ref": "#/definitions/id"}
+                    },
+                    "400": {"description": "Invalid request"},
+                    "500": {"description": "Server error"}
+                }
+            },
+            "delete": {
+                "tags": ["counts"],
+                "description": "Delete individual count using request, case and count Ids",
+                "operationId": "deleteCase",
+                "produces": ["application/json"],
+                "consumes": ["application/json"],
+                "responses": {
+                    "200": {"description": "successful operation"},
+                    "400": {"description": "Invalid request"},
+                    "500": {"description": "Server error"}
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "api_key": {
+            "type": "apiKey",
+            "name": "api_key",
+            "in": "header"
+        },
+        "petstore_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "http://petstore.swagger.io/api/oauth/dialog",
+            "flow": "implicit"
+        }
+    },
+    "definitions": {
+        "OAuth": {"properties": {
+            "access_token": {"type": "string"},
+            "token_type": {"type": "string"},
+            "refresh_toke": {"type": "string"},
+            "expires_in": {"type": "integer"},
+            "scope": {"type": "string"}
+        }},
+        "Request": {"properties": {"id": {"type": "string"}}},
+        "SingleRequest": {"properties": {
+            "id": {"type": "string"},
+            "date": {"type": "date"},
+            "applicant": {"$ref": "applicant"},
+            "court_type": {"type": "string"},
+            "locations": {
+                "type": "array",
+                "items": {"$ref": "location"}
+            },
+            "search_depth": {"type": "string"},
+            "price": {"type": "float"},
+            "customer_class": {"type": "string"},
+            "comments": {"type": "string"},
+            "late": {"type": "boolean"},
+            "asrc": {
+                "type": "array",
+                "items": {"$ref": "asrcd"}
+            }
+        }},
+        "applicant": {"properties": {
+            "first_name": {"type": "string"},
+            "last_name": {"type": "string"},
+            "ssn": {"type": "integer"},
+            "date_of_birth": {"type": "date"}
+        }},
+        "location": {"properties": {
+            "country": {"type": "string"},
+            "state": {"type": "string"},
+            "county": {"type": "string"},
+            "city": {"type": "string"}
+        }},
+        "asrcd": {"properties": {
+            "country": {"type": "string"},
+            "person": {
+                "type": "array",
+                "items": {"$ref": "person"}
+            },
+            "offence": {
+                "offence": {"type": "string"},
+                "date": {"type": "date"},
+                "plaintiff": {"type": "string"},
+                "type": {"type": "string"},
+                "type_modifier": {"type": "string"}
+            },
+            "disposition": {
+                "disposition": {"type": "string"},
+                "pending": {"type": "boolean"},
+                "date": {"type": "date"}
+            }
+        }},
+        "person": {"properties": {
+            "first_name": {"type": "string"},
+            "middle_name": {"type": "string"},
+            "last_name": {"type": "string"}
+        }},
+        "caseids": {
+            "type": "array",
+            "items": {"$ref": "id"}
+        },
+        "asrc": {"properties": {
+            "id": {"type": "integer"},
+            "reason": {"type": "string"}
+        }},
+        "verification": {
+            "required": true,
+            "default": "Array of: SOCIAL_SECURITY_NUMBER | DATE_OF_BIRTH | NAME | OTHER"
+        },
+        "id": {"properties": {"id": {"type": "integer"}}},
+        "counts": {"properties": {
+            "offence": {"properties": {
+                "offence": {"type": "string"},
+                "date": {"type": "date"},
+                "plaintiff": {"type": "string"},
+                "type": {"type": "string"},
+                "type_modifier": {"type": "string"}
+            }},
+            "disposition": {"properties": {
+                "disposition": {"type": "string"},
+                "pending": {"type": "boolean"},
+                "date": {"type": "date"}
+            }},
+            "sentence": {"type": "string"}
+        }},
+        "count": {"properties": {
+            "id": {"type": "integer"},
+            "offence": {"properties": {
+                "offence": {"type": "string"},
+                "date": {"type": "date"},
+                "plaintiff": {"type": "string"},
+                "type": {"type": "string"},
+                "type_modifier": {"type": "string"}
+            }},
+            "disposition": {"properties": {
+                "disposition": {"type": "string"},
+                "pending": {"type": "boolean"},
+                "date": {"type": "date"}
+            }},
+            "sentence": {"type": "string"}
+        }},
+        "cases": {"properties": {
+            "number": {"type": "integer"},
+            "verifications": {
+                "type": "array",
+                "required": false,
+                "items": {"$ref": "verification"}
+            },
+            "additional_info": {"type": "string"},
+            "counts": {
+                "type": "array",
+                "required": false,
+                "items": {"$ref": "counts"}
+            }
+        }},
+        "caseid": {"properties": {
+            "id": {"type": "integer"},
+            "number": {"type": "string"},
+            "verifications": {
+                "type": "array",
+                "required": false,
+                "items": {"$ref": "verification"}
+            },
+            "additional_info": {"type": "string"},
+            "counts": {
+                "type": "array",
+                "required": false,
+                "items": {"$ref": "counts"}
+            }
+        }},
+        "RequestResults": {"properties": {
+            "status": {
+                "type": "string",
+                "default": "One of: HITS | NO_HITS | DELAY | EDIT",
+                "required": true
+            },
+            "cases": {
+                "type": "array",
+                "required": false,
+                "items": {"$ref": "cases"}
+            },
+            "asrc": {
+                "type": "array",
+                "required": false,
+                "items": {"$ref": "asrc"}
+            }
+        }}
+    }
+}

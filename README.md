@@ -1,6 +1,7 @@
-
 Build using:
 
-	docker build -t hireright-chatter .
+docker build -t hireright-chatter .
 
+Run using:
 
+./run.sh
